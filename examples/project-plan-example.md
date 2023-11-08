@@ -1,35 +1,29 @@
 # Project Plan
 
 ## Title
-<!-- Give your project a short title. -->
-Awesome MADE project.
+COVID-19: Asia vs. Europe Comparison
 
 ## Main Question
-
-<!-- Think about one main question you want to answer based on the data. -->
-1. Does writing an example question help students write better project plans?
+Comparison between covid-19 cases in Asian and European countries in terms of total cases, total deaths, total recovered, and activate cases
 
 ## Description
 
-<!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
-XY is an important problem, because... This projects analyzes XY, using method A. The results can give insights into...
+This project aims to compare the covid-19 cases between European and Asian countries to find out covid-19 effect in the past and also help to forecast covid-19 cases in the future. This project analyzes total cases,total cases, total deaths, total recovered, and activate cases
+by using machine machine learning or deep learning method.
 
 ## Datasources
-
-<!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
-
-### Datasource1: ExampleSource
-* Metadata URL: https://mobilithek.info/offers/-6901989592576801458
-* Data URL: https://raw.githubusercontent.com/od-ms/radverkehr-zaehlstellen/main/100035541/2019-01.csv
+### Datasource1: Asia Covid 19 cases
+* Metadata URL: https://www.kaggle.com/datasets/anandhuh/latest-covid19-data-of-european-countries
+* Data URL: https://www.kaggle.com/datasets/anandhuh/latest-covid19-data-of-european-countries/download?datasetVersionNumber=38
+* Data Type: CSV
+### Datasource2: Covid-19 in Europe
+* Metadata URL: https://www.kaggle.com/datasets/vivek468/asia-covid-19-cases-updated-10-oct-21/data
+* Data URL: https://www.kaggle.com/datasets/vivek468/asia-covid-19-cases-updated-10-oct-21/download?datasetVersionNumber=1 
 * Data Type: CSV
 
-Short description of the DataSource.
+The dataset contains  coulums like Country, Total Cases, Total Deaths, Total Recovered, Active Cases, Total Cases/1 mil population, Death/1 mil population, Total Tests, Tests/1 mil population, and Population for both asia and europe covid-19 dataset.
 
 ## Work Packages
 
-<!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
+1. Feature selection[#1][i1]
 
-1. Example Issue [#1][i1]
-2. ...
-
-[i1]: https://github.com/jvalue/made-template/issues/1
