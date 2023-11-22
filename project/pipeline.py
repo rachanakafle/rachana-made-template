@@ -29,3 +29,14 @@ Active Cases
 Total Tests
 Population
 '''
+# Select relevant columns
+selected_columns = ["Country","Total Cases","Total Deaths","Total Recovered","Active Cases","Total Tests","Population"]
+
+# Create a new DataFrame with only the selected columns
+new_df_asia_covid  = df_asia_covid [selected_columns]
+print(new_df_asia_covid.head())
+new_df_europe_covid =df_europe_covid[selected_columns]
+print(new_df_europe_covid.head())
+
+
+
