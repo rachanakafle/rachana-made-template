@@ -1,3 +1,6 @@
 .DS_Store
 /data/*
 !/data/.gitkeep
+/venv/*
+/project/asia-covid-19-cases-updated-10-oct-21/*
+/project/latest-covid19-data-of-european-countries/*
