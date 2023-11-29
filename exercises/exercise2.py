@@ -9,3 +9,9 @@ data_url = "https://download-data.deutschebahn.com/static/datasets/haltestellen/
 # step2: read csv data into Dataframe
 df = pd.read_csv(data_url,delimiter=';')
 print(df.head())
+
+# Requirement 1: Drop the "Status" Column
+df = df.drop(column=['Status'])
+
+
+
