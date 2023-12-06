@@ -9,7 +9,7 @@ Comparison between covid-19 cases in Asian and European countries in terms of to
 ## Description
 
 This project aims to compare the covid-19 cases between European and Asian countries to find out covid-19 effect in the past and also help to forecast covid-19 cases in the future. This project analyzes total cases,total cases, total deaths, total recovered, and activate cases
-by using machine machine learning or deep learning method.
+by using machine learning or deep learning method.
 
 ## Datasources
 ### Datasource1: Asia Covid 19 cases
@@ -25,5 +25,8 @@ The dataset contains  coulums like Country, Total Cases, Total Deaths, Total Rec
 
 ## Work Packages
 
-1. Feature selection[#1][i1]
+1. Data Collection and Preprocessing[#1]
+2. Exploratory Data Analysis[#2]
+3. Time Series Forecasting[#3]
+4. Final Report and Code[#4]
 
