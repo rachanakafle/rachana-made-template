@@ -27,21 +27,31 @@ def asia_europe_db():
     Population
     '''
     # Select relevant columns
-    selected_columns = ["Country","TotalCases","TotalDeaths","TotalRecovered","ActiveCases","TotalTests"]
+    selected_columns_asia = ["Country","TotalCases","TotalDeaths","TotalRecovered","ActiveCases","TotalTests"]
+    selected_columns_europe = ["Country/Other","Total Cases","Total Deaths","Total Recovered","Active Cases","Total Tests"]
 
     # Create a new DataFrame with only the selected columns
-    new_df_asia_covid  = df_asia_covid [selected_columns]
+    new_df_asia_covid  = df_asia_covid [selected_columns_asia]
     print(new_df_asia_covid.head())
-
-    #new_df_europe_covid =df_europe_covid[selected_columns]
-    #print(new_df_europe_covid.head())
-    data_types ={"Country":"TEXT",
+    new_df_europe_covid = df_europe_covid[selected_columns_europe]
+    data_types_asia ={"Country":"TEXT",
                 "TotalCases":"INTEGER",
                 "TotalDeaths":"INTEGER",
                 "TotalRecovered":"INTEGER",
                  "ActiveCases":"INTEGER",
                  "TotalTests":"INTEGER"}
 
-    conn = sqlite3.connect('./data/asia_covid.sqlite')
-    new_df_asia_covid.to_sql('asia', conn, index=False, if_exists='replace', dtype=data_types)
-    conn.close()
+    data_types_europe = {"Country/Other": "TEXT",
+                       "Total Cases": "INTEGER",
+                       "TotalD eaths": "INTEGER",
+                       "Total Recovered": "INTEGER",
+                       "Active Cases": "INTEGER",
+                       "Total Tests": "INTEGER"}
+
+    conn1 = sqlite3.connect('./data/asia_covid.sqlite')
+    new_df_asia_covid.to_sql('asia', conn1, index=False, if_exists='replace', dtype=data_types_asia)
+    conn1.close()
+
+    conn2 = sqlite3.connect('./data/asia_covid.sqlite')
+    new_df_asia_covid.to_sql('asia', conn2, index=False, if_exists='replace', dtype=data_types_europe)
+    conn2.close()
