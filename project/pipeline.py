@@ -52,6 +52,7 @@ def asia_europe_db():
     new_df_asia_covid.to_sql('asia', conn1, index=False, if_exists='replace', dtype=data_types_asia)
     conn1.close()
 
-    conn2 = sqlite3.connect('./data/asia_covid.sqlite')
-    new_df_asia_covid.to_sql('asia', conn2, index=False, if_exists='replace', dtype=data_types_europe)
+    conn2 = sqlite3.connect('./data/europe_covid.sqlite')
+    new_df_europe_covid.to_sql('europe', conn2, index=False, if_exists='replace', dtype=data_types_europe)
     conn2.close()
+
