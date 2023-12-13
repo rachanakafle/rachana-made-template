@@ -29,4 +29,27 @@ pipeline CarsPipeline{
                  column BD, column BE, column BF, column BG, column BH, column BI, column BJ, column BK, column BL, column BB, column BN, column BC,
                  column BP, column BQ, column BR, column BS, column BT];
     }
+    //converting csv to table
+    block CarsTableInterpreter oftype TableInterpreter{
+        header:false;
+        columns: [
+            "date" oftype text,
+            "CIN" oftype CINLength,
+            "name" oftype text,
+            "petrol" oftype positiveNumber,
+            "diesel" oftype positiveNumber,
+            "gas" oftype positiveNumber,
+            "electro" oftype positiveNumber,
+            "hybrid" oftype positiveNumber,
+            "plugInHybrid" oftype positiveNumber,
+            "others" oftype positiveNumber
+
+		];
     }
+    // generating sqlite from table
+    block CarsSQLiteInterpreter oftype SQLiteLoader {
+		 table: "cars";
+         file: "cars.sqlite";
+    }
+    }
+
