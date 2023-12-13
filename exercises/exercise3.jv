@@ -19,7 +19,8 @@ pipeline CarsPipeline{
     block CarsRowDeleter oftype RowDeleter {
         delete: 
         [row 1, row 2, row 3, row 4, row 5, row 6, row 484, row 485, row 487]; 
-
+        
+    }
     //deleting columns
     block CarsColumnDeleter oftype ColumnDeleter {
         delete: [column D, column E, column F, column G, column H, column I, column J, column K, column L, column N,
@@ -68,6 +69,7 @@ pipeline CarsPipeline{
     valuetype positiveNumber oftype integer {
         constraints: [positiveNumberConst];
     }
+    //combing all
     CarsExtractor
         ->CarsTextFileInterpreter
         ->CarsDataCSVFInterpreter
@@ -77,5 +79,6 @@ pipeline CarsPipeline{
         ->CarsSQLiteInterpreter;
 
 }
+
 
 
