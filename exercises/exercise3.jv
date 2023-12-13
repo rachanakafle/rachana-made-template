@@ -51,5 +51,13 @@ pipeline CarsPipeline{
 		 table: "cars";
          file: "cars.sqlite";
     }
+    //making regex for strings with 5 characters, and can have a leading 0
+    constraint maxminfive oftype RegexConstraint {
+    regex: /^.{5}$/;
+  }
+    
+    valuetype CINLength oftype text {
+        constraints: [maxminfive];
+    }
     }
 
