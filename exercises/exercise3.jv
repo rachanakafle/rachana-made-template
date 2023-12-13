@@ -59,5 +59,23 @@ pipeline CarsPipeline{
     valuetype CINLength oftype text {
         constraints: [maxminfive];
     }
+
+   
+    constraint positiveNumberConst oftype RangeConstraint {
+        lowerBound: 0;
     }
+
+    valuetype positiveNumber oftype integer {
+        constraints: [positiveNumberConst];
+    }
+    CarsExtractor
+        ->CarsTextFileInterpreter
+        ->CarsDataCSVFInterpreter
+        ->CarsRowDeleter
+        ->CarsColumnDeleter
+        ->CarsTableInterpreter
+        ->CarsSQLiteInterpreter;
+
+}
+
 
