@@ -20,4 +20,4 @@ jobs:
            python-version: 3.11
 
       - name: Run shell script
-        run: sh project/test.sh 
+        run: sh project/tests.sh 
