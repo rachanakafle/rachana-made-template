@@ -1,0 +1,4 @@
+numpy==1.26.2
+pandas==2.1.4
+kaggle==1.5.16
+pytest==7.4.3
