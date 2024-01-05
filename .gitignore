@@ -8,3 +8,4 @@
 /project/__pycache__/
 /project/tests/__pycache__
 /exercises/cars.sqlite
+/project/.ipynb_checkpoints/*
