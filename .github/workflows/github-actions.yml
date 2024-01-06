@@ -1,4 +1,4 @@
-name: Github Actions
+name:  Project Feedback
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
     paths:
       - project/**
 jobs:
-  github-actions:
+  project-feedback:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
