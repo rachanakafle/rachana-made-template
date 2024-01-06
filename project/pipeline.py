@@ -15,44 +15,45 @@ def asia_europe_db():
     file_path = 'project/latest-covid19-data-of-european-countries/europe_covid.csv'
     df_europe_covid = pd.read_csv(file_path)
     print(df_europe_covid.head())
-
+    # Renaming the columns of df_europe_covid DataFrame
+    df_europe_covid = df_europe_covid.rename(columns={
+    "Country/Other": "Country",
+    "Total Cases": "TotalCases",
+    "Total Deaths": "TotalDeaths",
+    "Total Recovered": "TotalRecovered",
+    "Active Cases": "ActiveCases",
+    "Total Tests": "TotalTests"
+    })
+    
     # select only relevent columns
     '''
     Country
-    Total Cases
-    Total Deaths
-    Total Recovered
-    Active Cases
-    Total Tests
+    TotalCases
+    TotalDeaths
+    TotalRecovered
+    ActiveCases
+    TotalTests
     Population
     '''
     # Select relevant columns
-    selected_columns_asia = ["Country","TotalCases","TotalDeaths","TotalRecovered","ActiveCases","TotalTests"]
-    selected_columns_europe = ["Country/Other","Total Cases","Total Deaths","Total Recovered","Active Cases","Total Tests"]
+    selected_columns = ["Country","TotalCases","TotalDeaths","TotalRecovered","ActiveCases","TotalTests"]
 
     # Create a new DataFrame with only the selected columns
-    new_df_asia_covid  = df_asia_covid [selected_columns_asia]
+    new_df_asia_covid  = df_asia_covid [selected_columns]
     print(new_df_asia_covid.head())
-    new_df_europe_covid = df_europe_covid[selected_columns_europe]
-    data_types_asia ={"Country":"TEXT",
+    new_df_europe_covid = df_europe_covid[selected_columns]
+    data_types ={"Country":"TEXT",
                 "TotalCases":"INTEGER",
                 "TotalDeaths":"INTEGER",
                 "TotalRecovered":"INTEGER",
                  "ActiveCases":"INTEGER",
                  "TotalTests":"INTEGER"}
 
-    data_types_europe = {"Country/Other": "TEXT",
-                       "Total Cases": "INTEGER",
-                       "TotalD eaths": "INTEGER",
-                       "Total Recovered": "INTEGER",
-                       "Active Cases": "INTEGER",
-                       "Total Tests": "INTEGER"}
-
     conn1 = sqlite3.connect('./data/asia_covid.sqlite')
-    new_df_asia_covid.to_sql('asia', conn1, index=False, if_exists='replace', dtype=data_types_asia)
+    new_df_asia_covid.to_sql('asia', conn1, index=False, if_exists='replace', dtype=data_types)
     conn1.close()
 
     conn2 = sqlite3.connect('./data/europe_covid.sqlite')
-    new_df_europe_covid.to_sql('europe', conn2, index=False, if_exists='replace', dtype=data_types_europe)
+    new_df_europe_covid.to_sql('europe', conn2, index=False, if_exists='replace', dtype=data_types)
     conn2.close()
 
