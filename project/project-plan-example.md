@@ -21,7 +21,7 @@ In this project, I will focus on a dataset related to COVID-19 cases in Asia and
 * Data URL: https://www.kaggle.com/datasets/anandhuh/latest-covid19-data-of-european-countries?select=europe_covid.csv
 * Data Type: CSV
 
-The dataset contains  coulums like Country, Total Cases, Total Deaths, Total Recovered, Active Cases, Total Cases/1 mil population, Death/1 mil population, Total Tests, Tests/1 mil population, and Population for both asia and europe covid-19 dataset.
+These datasets contain columns like Country, Total Cases, Total Deaths, Total Recovered, Active Cases, Total Cases/1 mil population, Death/1 mil population, Total Tests, Tests/1 mil population, and Population for both Asia and Europe COVID-19 dataset.
 
 ## Work Packages
 
