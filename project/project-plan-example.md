@@ -9,7 +9,7 @@ If a country has higher COVID-19 cases, will it always have higher deaths?
 
 ## Description
 
-In this project, I will focus on a dataset related to COVID-19 cases in Asia and Europe.I'll analyze whether countries with more COVID-19 cases also have more deaths cases.The aim is to determine whether a strong correlation exists between the number of COVID-19 cases and the associated death cases.
+In this project, I will focus on a dataset related to COVID-19 cases in Asia and Europe. I'll analyze whether countries with more COVID-19 cases also have more deaths cases. The aim is to determine whether a strong correlation exists between the number of COVID-19 cases and the associated death cases.
 
 ## Datasources
 ### Datasource1: Asia Covid 19 cases
