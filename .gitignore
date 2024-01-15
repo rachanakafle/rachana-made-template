@@ -4,7 +4,7 @@
 /venv/*
 /project/asia-covid-19-cases-updated-10-oct-21/*
 /project/latest-covid19-data-of-european-countries/*
-#/project/kaggle.json
+/project/kaggle.json
 /project/__pycache__/
 /project/tests/__pycache__
 /exercises/cars.sqlite

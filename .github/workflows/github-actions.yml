@@ -8,6 +8,9 @@ on:
 jobs:
   project-feedback:
     runs-on: ubuntu-latest
+    env:
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,6 +25,17 @@ jobs:
         with:
           path: main
           python-version: 3.11
+          
+      - name: Set up Kaggle API
+        run: |
+          echo "KAGGLE_USERNAME=$KAGGLE_USERNAME"
+          echo "KAGGLE_KEY=$KAGGLE_KEY"
+          echo "$KAGGLE_USERNAME:$KAGGLE_KEY" > $GITHUB_WORKSPACE/project/kaggle.json
+          chmod 600 $GITHUB_WORKSPACE/project/kaggle.json
+
+      - name: Echo Kaggle JSON
+        run: |
+          cat $GITHUB_WORKSPACE/project/kaggle.json     
 
       - name: Run shell script
         run: sh ./project/tests.sh
