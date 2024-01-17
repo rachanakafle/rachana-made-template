@@ -13,16 +13,16 @@ Kaggle data was accessed using personal credentials.
 ### Data pipeline 
 The following data pipeline steps are followed.
 
-Data Collection: 
+**Data Collection:** 
 Pulled datasets COVID-19 Asian and European countries datasets from Kaggle using the Kaggle API.
 
-Data Loading: 
+**Data Loading:** 
 Loads the pulled datasets into pandas DataFrames.
 
-Data Transformation & Cleaning:
+**Data Transformation & Cleaning:**
 Renames columns for the European COVID-19 dataset to make them consistent with the Asian COVID-19 dataset. Checking for missing or null values in both datasets and filling them with the mean where values are absent. Finally,selects only the relevant columns from both datasets.
 
-Data Storage:
+**Data Storage:**
 Stores the transformed Asian COVID-19 data into an SQLite database named asia_covid.sqlite. Similary,
 Stores the transformed European COVID-19 data into an SQLite database named europe_covid.sqlite
 
