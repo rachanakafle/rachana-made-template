@@ -4,8 +4,7 @@ This research project analyzes whether countries with more COVID-19 cases also h
 ### Datasources
 In this project, two Kaggle datasets are used. The first dataset contains COVID-19 cases in Asia as of October 10, 2021, and the second dataset provides COVID-19 data for Europe as of January 19, 2023.
 
- Datasource1: Asia Covid 19 cases
-[Asia Covid 19 cases](https://www.kaggle.com/datasets/vivek468/asia-covid-19-cases-updated-10-oct-21/data)
+ Datasource1: [Asia Covid 19 cases](https://www.kaggle.com/datasets/vivek468/asia-covid-19-cases-updated-10-oct-21/data)
 
 Datasource2:[Europe Covid 19 cases](https://www.kaggle.com/datasets/anandhuh/latest-covid19-data-of-european-countries)
 
@@ -16,11 +15,13 @@ The following data pipeline steps are followed.
 
 Data Collection: 
 Pulled datasets COVID-19 Asian and European countries datasets from Kaggle using the Kaggle API.
+
 Data Loading: 
 Loads the pulled datasets into pandas DataFrames.
+
 Data Transformation & Cleaning:
-Renames columns for the European COVID-19 dataset to make them consistent with the Asian COVID-19 dataset. Checking for missing or null values in both datasets and filling them with the mean where values are absent. Finally,
-selects only the relevant columns from both datasets.
+Renames columns for the European COVID-19 dataset to make them consistent with the Asian COVID-19 dataset. Checking for missing or null values in both datasets and filling them with the mean where values are absent. Finally,selects only the relevant columns from both datasets.
+
 Data Storage:
 Stores the transformed Asian COVID-19 data into an SQLite database named asia_covid.sqlite. Similary,
 Stores the transformed European COVID-19 data into an SQLite database named europe_covid.sqlite
